@@ -6,11 +6,6 @@ use App\Http\Requests\TeaterperformancesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
-/**
- * Class TeaterperformancesCrudController
- * @package App\Http\Controllers\Admin
- * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
- */
 class TeaterperformancesCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
@@ -18,6 +13,44 @@ class TeaterperformancesCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+
+    private function getFieldsData($show = false)
+    {
+        return [
+            [
+                'name' => 'name',
+                'label' => 'Name',
+                'type' => 'text',
+            ],
+            [
+                'name' => 'date',
+                'label' => 'Date',
+                'type' => 'date',
+            ],
+            [
+                'name' => 'venue',
+                'label' => 'Venue',
+                'type' => 'text',
+            ],
+            [
+                'name' => 'image',
+                'label' => 'Image',
+                'type' => ($show ? 'view' : 'upload'),
+                'upload' => true,
+                'view' => 'partials/image',
+            ],
+            [
+                'name' => 'additional_info',
+                'label' => 'Additional Info',
+                'type' => 'textarea',
+            ],
+            [
+                'name' => 'tickets',
+                'label' => 'Tickets',
+                'type' => 'text',
+            ],
+        ];
+    }
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -29,6 +62,8 @@ class TeaterperformancesCrudController extends CrudController
         CRUD::setModel(\App\Models\Teaterperformances::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/teaterperformances');
         CRUD::setEntityNameStrings('teaterperformances', 'teaterperformances');
+
+        $this->crud->addFields($this->getFieldsData());
     }
 
     /**
@@ -38,14 +73,10 @@ class TeaterperformancesCrudController extends CrudController
      * @return void
      */
     protected function setupListOperation()
-     {
-    //     $this->crud->set('show.setFromDb', false);
-    //     $this->crud->addColumns($this->getFieldsData(TRUE));
+    {
+        $this->crud->addColumns($this->getFieldsData(true));
 
-        /**
-         * Columns can be defined using the fluent syntax:
-         * - CRUD::column('price')->type('number');
-         */
+        // Add any additional columns or configurations specific to the List operation.
     }
 
     /**
@@ -56,17 +87,23 @@ class TeaterperformancesCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(TeaterperformancesRequest::class);
-        CRUD::setFromDb(); // set fields from db columns.
-        CRUD::addField([   // image field
+        $this->crud->setValidation(TeaterperformancesRequest::class);
+        $this->crud->addField([   // image field
             'name' => 'image',
             'type' => 'upload',
             'upload' => true,
         ]);
-        CRUD::addField([   // additional_info field
+        $this->crud->addField([   // additional_info field
             'name' => 'additional_info',
             'type' => 'textarea',
         ]);
+        $this->crud->addField([   // tickets field
+            'name' => 'tickets',
+            'label' => 'Tickets',
+            'type' => 'text',
+        ]);
+
+        // Add any additional fields or configurations specific to the Create operation.
     }
 
     /**
@@ -78,5 +115,7 @@ class TeaterperformancesCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+
+        // Add any additional fields or configurations specific to the Update operation.
     }
 }

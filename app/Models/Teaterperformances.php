@@ -20,11 +20,11 @@ class Teaterperformances extends Model
     */
 
     protected $table = 'teaterperformances';
-    // protected $primaryKey = 'id';
-    // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
-    // protected $hidden = [];
+    protected $fillable = ['name', 'date', 'venue', 'image', 'additional_info', 'ticket_id'];
+    protected $casts = [
+        'tickets' => 'json',
+    ];
 
     /*
     |--------------------------------------------------------------------------
@@ -33,12 +33,12 @@ class Teaterperformances extends Model
     */
 
     public static function boot()
-{
-    parent::boot();
-    static::deleting(function($obj) {
-        Storage::delete(Str::replaceFirst('storage/','public/', $obj->image));
-    });
-}
+    {
+        parent::boot();
+        static::deleting(function ($obj) {
+            Storage::delete(Str::replaceFirst('public/', 'storage/', $obj->image));
+        });
+    }
 
 
 
