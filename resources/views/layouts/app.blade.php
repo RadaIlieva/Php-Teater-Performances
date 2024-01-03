@@ -164,10 +164,7 @@ https://templatemo.com/tm-576-snapx-photography
 
   <footer>
   <div class="container">
-  <div class="container">
-    <div class="row">
-      <div class="row">
-        <div class="LastTeater">
+   <div class="LastTeater">
             
         <div class="col-lg-12">
           <p>Copyright © 2048 <a href="#">SnapX</a> Photo Contest Co., Ltd. All rights reserved. 

@@ -45,10 +45,11 @@ class TeaterperformancesCrudController extends CrudController
                 'type' => 'textarea',
             ],
             [
-                'name' => 'tickets',
-                'label' => 'Tickets',
+                'name' => 'bilety',
+                'label' => 'Ticket',
                 'type' => 'text',
             ],
+            
         ];
     }
 
@@ -97,11 +98,12 @@ class TeaterperformancesCrudController extends CrudController
             'name' => 'additional_info',
             'type' => 'textarea',
         ]);
-        $this->crud->addField([   // tickets field
-            'name' => 'tickets',
-            'label' => 'Tickets',
-            'type' => 'text',
+        $this->crud->addField([   // tickety field
+            'name' => 'bilety',
+            'label' => 'Ticket',
+            'type' => 'text',      
         ]);
+        
 
         // Add any additional fields or configurations specific to the Create operation.
     }

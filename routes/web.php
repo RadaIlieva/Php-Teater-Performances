@@ -16,3 +16,4 @@ use App\Http\Controllers\IndexController;
 
 
 Route::get('/', [IndexController::class, 'index']);
+

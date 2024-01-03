@@ -30,7 +30,7 @@ class TeaterperformancesRequest extends FormRequest
             'venue' => 'required|min:5|max:255',
             'additional_info'=>'required|min:5|max:1000',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'tickets.*.price' => 'required|min:1|max:255',
+            'bilety' => 'nullable|min:5|max:255',
         ];
     }
 
@@ -47,7 +47,7 @@ class TeaterperformancesRequest extends FormRequest
             'venue' => 'Performance Venue',
             'additional_info'=>'Performance Additiona-iInfo',
             'image' => 'Performance Image',
-            'tickets.*.price' => 'Tickets',
+            'bilety' => 'Ticket',
         ];
     }
 
@@ -67,9 +67,6 @@ class TeaterperformancesRequest extends FormRequest
             'venue.required' => 'The performance venue is required.',
             'venue.min' => 'The performance venue must be at least :min characters.',
             'venue.max' => 'The performance venue may not be greater than :max characters.',
-            'tickets.*.price.required' => 'The price for each ticket is required.',
-            'tickets.*.price.numeric' => 'The price for each ticket must be a number.',
-            'tickets.*.price.min' => 'The price for each ticket must be at least :min.',
             // Добави други съобщения, ако е необходимо
         ];
     }

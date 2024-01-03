@@ -273,7 +273,7 @@ Header Style
 }
 
 .header-area .main-nav .logo img {
-  max-width: 142px;
+  max-width: 80px;
 }
 
 .background-header .main-nav .logo {
@@ -788,7 +788,6 @@ a.btn_red {
   
   padding: 5px 10px;
   margin-right: 10px;
-  float: left;
   color: #FFF;
   font-size: 16px;
   text-align: center;
@@ -931,7 +930,8 @@ Banner Style
 */
 
 .main-banner {
-  background-image: url(../images/banner-bg.jpg);
+  background-image: url(../images/image3.jpg);
+  opacity: 0.7;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1248,7 +1248,7 @@ closed contests
 */ 
 
 section.closed-contests {
-  background-image: url(../images/closed-bg.jpg);
+  background-image: url(../images/image3.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1478,7 +1478,7 @@ page heading
 */
 
 .page-heading {
-  background-image: url(../images/heading-bg.jpg);
+  background-image: url(../images/image3.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
