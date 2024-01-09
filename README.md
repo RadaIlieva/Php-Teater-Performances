@@ -1,4 +1,5 @@
-
+THEATER PERFORMANCES SYSTEM
+--------------------------------------------------------------------------------------------------
 The program represents a Theater Productions System. Its main purpose is to provide information about upcoming theatrical performances, including details such as the name of the performance, venue, date, image, and a brief description of the production (additional information). To create the system, I used PHP using the Laravel framework and Backpack (a set of packages designed for Laravel).
 
 
