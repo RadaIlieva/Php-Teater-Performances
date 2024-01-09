@@ -4,6 +4,7 @@ The program represents a Theater Productions System. Its main purpose is to prov
 
 
 COMPONENTS:
+--------------------------------------------------------------------------------------------------
 Teaterperformances Model
 The Teaterperformances model represents the data structure for theatrical performances. It includes fields such as name, venue, date, image, and additional_info.
 
