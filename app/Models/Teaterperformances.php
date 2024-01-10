@@ -33,12 +33,12 @@ class Teaterperformances extends Model
     */
 
     public static function boot()
-{
-    parent::boot();
-    static::deleting(function($obj) {
-        Storage::delete(Str::replaceFirst('storage/','public/', $obj->image));
+    {
+        parent::boot();
+        static::deleting(function($obj) {
+            Storage::delete(Str::replaceFirst('storage/','public/', $obj->image));
     });
-}
+    }
 
 
 

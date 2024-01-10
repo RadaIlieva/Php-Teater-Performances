@@ -30,6 +30,7 @@ class TeaterperformancesRequest extends FormRequest
             'venue' => 'required|min:5|max:255',
             'additional_info'=>'required|min:5|max:1000',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'bilety' => 'nullable|min:5|max:255',
         ];
     }
 
@@ -46,6 +47,7 @@ class TeaterperformancesRequest extends FormRequest
             'venue' => 'Performance Venue',
             'additional_info'=>'Performance Additiona-iInfo',
             'image' => 'Performance Image',
+            'bilety' => 'Ticket',
         ];
     }
 

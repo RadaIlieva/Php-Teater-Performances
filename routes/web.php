@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/', [IndexController::class, 'index']);
+Route::get('/search', [IndexController::class, 'search'])->name('search');
+//Route::get('/search', 'PerformanceController@search');
 
-Route::get('/', function () {
-    return view('welcome');
-});
