@@ -89,16 +89,16 @@ class TeaterperformancesCrudController extends CrudController
     protected function setupCreateOperation()
     {
         $this->crud->setValidation(TeaterperformancesRequest::class);
-        $this->crud->addField([   // image field
+        $this->crud->addField([   
             'name' => 'image',
             'type' => 'upload',
             'upload' => true,
         ]);
-        $this->crud->addField([   // additional_info field
+        $this->crud->addField([   
             'name' => 'additional_info',
             'type' => 'textarea',
         ]);
-        $this->crud->addField([   // tickety field
+        $this->crud->addField([   
             'name' => 'bilety',
             'label' => 'Ticket',
             'type' => 'text',      

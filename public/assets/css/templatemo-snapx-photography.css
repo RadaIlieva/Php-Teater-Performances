@@ -308,7 +308,7 @@ Header Style
 .header-area .main-nav .nav li {
   padding-left: 30px;
   padding-right: 30px;
-  background-color: #00bdfe;
+  background-color: #fe0000;
 }
 
 .header-area .main-nav .nav li a {
@@ -405,7 +405,7 @@ Header Style
 
 .header-area .main-nav .nav li.has-sub ul li a:hover {
   background: #fff;
-  color: #00bdfe!important;
+  color: #681010!important;
   padding-left: 25px;
 }
 
@@ -577,7 +577,7 @@ Header Style
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #00bdfe!important;
+    color: #9d0c30!important;
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
@@ -1002,7 +1002,7 @@ Banner Style
 }
 
 .main-banner .icon-button a:hover {
-  color: #00bdfe;
+  color: #9dc622;
 }
 
 
@@ -1800,7 +1800,7 @@ Contests Page
 }
 
 .contest-win ul.pagination li.active a {
-  background-color: #00bdfe;
+  background-color: #4a1112;
   color: #fff;
 }
 
@@ -2020,7 +2020,7 @@ Contest Details Page
 }
 
 .contest-waiting ul.pagination li.active a {
-  background-color: #00bdfe;
+  background-color: #020202;
   color: #fff;
 }
 
@@ -2270,8 +2270,8 @@ Categories Page
 }
 
 .testimonials .owl-dots .active {
-  background-color: #00bdfe;
-  border: 1px solid #00bdfe;
+  background-color: #fe0015;
+  border: 1px solid #fe0000;
 }
 
 

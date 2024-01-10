@@ -32,6 +32,7 @@ https://templatemo.com/tm-576-snapx-photography
 -->
 
 <style>
+    
     main.gallery {
         display: flex;
         flex-wrap: wrap;
@@ -40,30 +41,35 @@ https://templatemo.com/tm-576-snapx-photography
     }
 
     .performance {
-        width: 48%;
-        margin-bottom: 20px;
-        border: 3px solid #3498db; /* Цвят на рамката */
-        background-color: #aed6f1;
-        padding: 10px;
-        border-radius: 15px; /* Заоблете крайщата на прозореца */
-        overflow: hidden; /* Скрийте част от известната част */
-    }
+    width: 450px; /* Фиксирана ширина */
+    height: 800px; /* Фиксирана височина */
+    background-color: #F3F8FF;
+    padding: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-    .performance img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
+.performance img {
+    width: 100%;
+    height: 60%; /* Размер на снимката в отношение към родителя */
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-top:5px;
+    border-top-left-radius: 15px; /* Rounded corners for the top-left */
+    border-top-right-radius: 15px;
+}
+
 
     .performance h3{
       color: # 000000; 
-      background-color: #CEE8F7;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 15px;
       padding: 10px;
       font-family: Verdana;
     }
     .performance p {
-        background-color: #aed6f1; /* Цвят на фона на текста */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 5px; /* Добавете подходящ вътрешен паддинг */
         font-family: sans-serif; /* Заменете 'Your Chosen Font' със стойността на предпочитания от вас шрифт */
         color: # 000000; 
@@ -72,6 +78,33 @@ https://templatemo.com/tm-576-snapx-photography
     .additional-info {
         white-space: pre-line;
     }
+
+    .search-form {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 2px solid #3498db; /* Цвят на рамката */
+    border-radius: 5px; /* Заоблете ъглите */
+    outline: none;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    background-color: #3498db; /* Цвят на фона на бутона */
+    color: #ffffff; /* Цвят на текста на бутона */
+    border: none;
+    border-radius: 5px; /* Заоблете ъглите */
+    cursor: pointer;
+}
+
+/* При фокусиране на полето за търсене */
+.search-form input[type="text"]:focus {
+    border-color: #2980b9; /* Променете цвета на рамката при фокус */
+}
+
 
 </style>
 
@@ -86,17 +119,13 @@ https://templatemo.com/tm-576-snapx-photography
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                  
-                    <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
                     <img src="assets/images/image1.png" alt="Teater" style="width: 80px; height: auto;">
                     </a>
-                    <!-- ***** Logo End ***** -->
-
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.html" class="active">Система за Театрални постановки </a></li>
-                        
+                    </ul> 
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -106,96 +135,10 @@ https://templatemo.com/tm-576-snapx-photography
         </div>
     </div>
   </header>
-  <!-- ***** Header Area End ***** -->
-
-  <!-- <div id="modal" class="popupContainer" style="display:none;">
-    <div class="popupHeader">
-        <span class="header_title">Login</span>
-        <span class="modal_close"><i class="fa fa-times"></i></span>
-    </div> -->
-
-    <!-- <section class="popupBody"> -->
-        <!-- Social Login -->
-        <!-- <div class="social_login">
-            <div class="">
-                <a href="#" class="social_box fb">
-                    <span class="icon"><i class="fab fa-facebook"></i></span>
-                    <span class="icon_title">Connect with Facebook</span>
-
-                </a>
-
-                <a href="#" class="social_box google">
-                    <span class="icon"><i class="fab fa-google-plus"></i></span>
-                    <span class="icon_title">Connect with Google</span>
-                </a>
-            </div>
-
-            <div class="centeredText">
-                <span>Or use your Email address</span>
-            </div>
-
-            <div class="action_btns">
-                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
-            </div>
-        </div>
-
-        Username & Password Login form
-        <div class="user_login">
-            <form action="" method="post">
-                <label>Email / Username</label>
-                <input name="username" type="text" id="username" />
-              <br />
-
-                <label>Password</label>
-                <input name="password" type="password" id="password" />
-              <br />
-
-                <div class="checkbox">
-                    <input id="remember" type="checkbox" />
-                    <label for="remember">Remember me on this computer</label>
-                </div>
-
-                <div class="action_btns">
-                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><button type="submit" class="btn btn_red">Login</button></div>
-                </div>
-            </form>
-
-            <a href="#" class="forgot_password">Forgot password?</a>
-        </div>
-
-        Register Form
-        <div class="user_register">
-            <form action="" method="post">
-                <label>Username</label>
-                <input name="username" type="text" id="username" />
-                <br />
-
-                <label>Email Address</label>
-                <input name="email" type="email" id="email" />
-                <br />
-
-                <label>Password</label>
-                <input name="password" type="password" id="password" />
-                <br />
-
-                <div class="checkbox">
-                    <input id="send_updates" type="checkbox" />
-                    <label for="send_updates">Send me occasional email updates</label>
-                </div>
-
-                <div class="action_btns">
-                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><button type="submit" class="btn btn_red">Register</button></div>
-                </div>
-            </form>
-        </div>
-        
-    </section>
-  </div>
+  
 
   <!-- ***** Main Banner Area Start ***** -->
+  
   <div class="main-banner" style="background-image: url('assets/images/image3.jpg'); opacity: 0.7;">
   <div class="container">
       <div class="row">
@@ -208,14 +151,38 @@ https://templatemo.com/tm-576-snapx-photography
         </div>
     </div>
 </div>
-  </div> -->
-  <!-- ***** Main Banner Area End ***** -->
+  </div> 
 
-  <main class="gallery">
-    @foreach($latestPerformances as $performance)
+
+  
+  <!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/image1.png" alt="Teater" style="width: 80px; height: auto;">
+                    </a>
+                    <ul class="nav">
+                        <li><a href="index.html" class="active">Система за Театрални постановки </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<form action="{{ route('search') }}" method="GET" class="search-form">
+    @csrf
+    <input type="text" name="query" placeholder="Търсене...">
+</form>
+
+<main class="gallery" id="teaterPerformancesList">
+    @foreach($teaterperformances as $performance)
         <div class="performance">
-        <img src="{{ asset('storage/teaterperformances/' . $performance->image) }}" alt="{{ $performance->name }}">
-          <h3>{{ $performance->name }}</h3>
+            <img src="{{ $performance->image }}" >
+            <h3>{{ $performance->name }}</h3>
             <p><strong>Date:</strong> <br>{{ $performance->date }}</p>
             <p><strong>Venue:</strong> <br>{{ $performance->venue }}</p>
             <p><strong>Ticket:</strong><br> {{ $performance->bilety }}</p>
@@ -226,20 +193,27 @@ https://templatemo.com/tm-576-snapx-photography
     @endforeach
 </main>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    let searchForm = document.querySelector('.search-form');
+    let teaterPerformancesList = document.getElementById('teaterPerformancesList');
+
+    searchForm.addEventListener('input', function () {
+        let searchTerm = searchForm.querySelector('input[name="query"]').value;
+
+        fetch(`/search?query=${searchTerm}`)
+            .then(response => response.text())
+            .then(data => {
+                teaterPerformancesList.innerHTML = data;
+            });
+    });
+});
+</script>
+
+
     <footer>
 
     </footer>
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <!-- <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script> -->
 
   </body>
 </html>

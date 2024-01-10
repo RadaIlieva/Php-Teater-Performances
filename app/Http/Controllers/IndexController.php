@@ -7,22 +7,31 @@ use App\Models\Teaterperformances;
 
 class IndexController extends Controller
 {
-    public function index() {
+    public function index()
+    {
+        // Вземане на всички постановки, подредени по дата във възходящ ред (от най-близката към най-далечната)
+        $teaterperformances = Teaterperformances::orderBy('date')->get();
 
-        
-        $teaterperformances = Teaterperformances::all();
+        // Връщане на изгледа със заредените данни
+        return view('index.index', compact('teaterperformances'));
+    }
 
-        
-        $totalPerformances = count($teaterperformances);
-        $numberOfPerformances = 2;
-        $startIndex = $totalPerformances - $numberOfPerformances;
-        $latestPerformances = [];
-        
-        for ($i = $startIndex; $i < $totalPerformances; $i++) {
-            $latestPerformances[] = $teaterperformances[$i];
-        }
+    protected function setupListOperation()
+    {
+        $this->crud->addColumns($this->getFieldsData(true));
 
-        // Return the view with loaded data
-        return view('index.index', compact('latestPerformances'));
+        // Add any additional columns or configurations specific to the List operation.
+    }
+
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('query');
+    
+        $teaterperformances = Teaterperformances::where('venue', 'like', "%$searchTerm%")
+            ->orWhere('name', 'like', "%$searchTerm%")
+            ->orderBy('date')
+            ->get();
+    
+        return view('index.search_results', compact('teaterperformances'));
     }
 }

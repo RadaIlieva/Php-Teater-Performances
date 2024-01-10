@@ -16,4 +16,6 @@ use App\Http\Controllers\IndexController;
 
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/search', [IndexController::class, 'search'])->name('search');
+//Route::get('/search', 'PerformanceController@search');
 
