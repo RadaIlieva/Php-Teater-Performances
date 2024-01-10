@@ -48,6 +48,7 @@ https://templatemo.com/tm-576-snapx-photography
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top:30px;
 }
 
 .performance img {
@@ -183,11 +184,11 @@ https://templatemo.com/tm-576-snapx-photography
         <div class="performance">
             <img src="{{ $performance->image }}" >
             <h3>{{ $performance->name }}</h3>
-            <p><strong>Date:</strong> <br>{{ $performance->date }}</p>
-            <p><strong>Venue:</strong> <br>{{ $performance->venue }}</p>
-            <p><strong>Ticket:</strong><br> {{ $performance->bilety }}</p>
+            <p><strong>Дата на провеждане:</strong> <br>{{ $performance->date }}</p>
+            <p><strong>Място на провеждане:</strong> <br>{{ $performance->venue }}</p>
+            <p><strong>Билети:</strong><br> {{ $performance->bilety }}</p>
             <div class="performance-content">
-                <p><strong>Additional Info:</strong><br> {{ $performance->additional_info }}</p>
+                <p><strong>Допълнителна информация:</strong><br> {{ $performance->additional_info }}</p>
             </div>
         </div>
     @endforeach
