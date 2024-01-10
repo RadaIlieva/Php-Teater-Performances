@@ -17,7 +17,6 @@ return new class extends Migration
             $table->date('date');
             $table->string('venue');
             $table->timestamps();
-            $table->string('image')->nullable();
         });
     }
 
